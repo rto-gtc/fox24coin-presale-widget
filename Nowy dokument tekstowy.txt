@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presale Widget</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .presale-widget {
+            width: 380px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .header-background {
+            position: relative;
+            height: 180px;
+            background-image: url('https://i.imgur.com/your-gold-bars-image.png'); /* Zastąp swoim obrazem sztabek złota */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .header-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.2));
+        }
+
+        .presale-ends-text {
+            position: relative;
+            z-index: 1;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .countdown {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffd700; /* Złoty kolor */
+        }
+
+        .countdown-label {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            color: #cccccc;
+            margin-top: -5px;
+        }
+
+        .widget-content {
+            padding: 25px;
+        }
+
+        .join-presale-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rocket-icon {
+            margin-left: 10px;
+            font-size: 1.2em;
+        }
+
+        .tokens-remaining {
+            font-size: 1em;
+            margin-bottom: 25px;
+            color: #cccccc;
+        }
+
+        .tokens-remaining span {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .input-group {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: 1px solid #444;
+            background-color: #2c2c2c;
+            color: #ffffff;
+            border-radius: 8px 0 0 8px;
+            font-size: 1em;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 0 1px #ffd700;
+        }
+
+        .input-group .currency-label {
+            padding: 12px 15px;
+            background-color: #444;
+            color: #ffffff;
+            border-radius: 0 8px 8px 0;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .price-info {
+            font-size: 0.9em;
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+
+        .total-cost {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .total-cost span {
+            color: #ffd700;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .connect-wallet-button {
+            background-color: #ffd700; /* Złoty kolor */
+            color: #1a1a1a;
+        }
+
+        .connect-wallet-button:hover {
+            background-color: #e6c200;
+        }
+
+        .buy-eth-button {
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        .buy-eth-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="presale-widget">
+        <div class="header-background">
+            <div class="presale-ends-text">Presale Ends In:</div>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-value">245</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value">21</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value">11</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value">27</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget-content">
+            <div class="join-presale-title">
+                Join the Presale!<span class="rocket-icon">🚀</span>
+            </div>
+            <div class="tokens-remaining">
+                Tokens remaining in this round: <span>100 FOX24</span>
+            </div>
+
+            <div class="input-group">
+                <input type="number" value="10" min="1" id="fox24Amount">
+                <div class="currency-label">FOX24</div>
+            </div>
+
+            <div class="price-info">
+                Price: 0.01 per token ETH
+            </div>
+            <div class="total-cost">
+                Total Cost: <span id="totalCost">0.1 ETH</span>
+            </div>
+
+            <button class="button connect-wallet-button">Connect Wallet</button>
+            <button class="button buy-eth-button">Buy ETH</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fox24AmountInput = document.getElementById('fox24Amount');
+            const totalCostSpan = document.getElementById('totalCost');
+            const pricePerToken = 0.01; // 0.01 ETH per FOX24
+
+            function updateTotalCost() {
+                const amount = parseFloat(fox24AmountInput.value);
+                if (!isNaN(amount) && amount >= 0) {
+                    const total = (amount * pricePerToken).toFixed(2); // Zaokrągl do 2 miejsc po przecinku
+                    totalCostSpan.textContent = `${total} ETH`;
+                } else {
+                    totalCostSpan.textContent = `0.00 ETH`;
+                }
+            }
+
+            fox24AmountInput.addEventListener('input', updateTotalCost);
+
+            // Initial calculation
+            updateTotalCost();
+        });
+    </script>
+</body>
+</html>
